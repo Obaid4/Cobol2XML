@@ -48,6 +48,8 @@ public ArrayList<String> randomExpansion(int maxDepth, int depth) {
 	v.add(Double.toString(d));
 	return v;
 }
+
+
 /**
  * Returns a textual description of this parser.
  *
