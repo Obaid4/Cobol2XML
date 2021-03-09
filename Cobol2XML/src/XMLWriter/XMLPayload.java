@@ -129,6 +129,18 @@ public class XMLPayload {
 		} else {
 			//System.out.println("Comment Line null");
 		  }
+		
+		/**
+		 * add commentLine element
+		 */
+		String commentLine = c.getCommentLine();
+		if(commentLine != null) {
+			this.addCommentLineElement(commentLine);
+			//System.out.println("Got Section");
+			// Add contents of procedure division
+		} else {
+			//System.out.println("Comment Line null")
+		}
 	}
 	
 
@@ -144,7 +156,6 @@ public class XMLPayload {
  	
 	void addCommentLineElement(String stringElement) {
 		//  Comment Line element
-		
 		if(stringElement != null) {
 			Element cobolname = doc.createElement("comment");
 			cobolname.appendChild(doc.createTextNode(stringElement));
@@ -259,4 +270,5 @@ public class XMLPayload {
 			rootElement.appendChild(cobolname);
 		}
 	}
+	
 }

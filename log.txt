@@ -1,6 +1,13 @@
-1)Class=CobolParser	Method=cobol()		Change=a.add( constantValue() );
+1)Class=CobolParser	Method=cobol()		Change=a.add( constantValue() )
 2)Class=CobolParser	Method=constantValue()	Change=new method
 3)Class=ConstantValueAssembler Method=workOn()	Change=new class & method
 4)Class=Cobol		 Method=N/A	 	Change=new constant value fields and their get&set
-5)Class=XMLPaylod		Method=addElements(Cobol c)	Change=add constantName element
+5)Class=XMLPaylod		Method=addElements()	Change=add constantName element
 6)Class=XMLPaylod		Method=addConstantValueElement()	Change=new method
+7)Class=CobolParser	Method=cobol()		Change=a.add( CommentLine() )
+8)Class=CobolParser	Method=CommentLine()	Change=new method
+9)Class=CommentLineAssembler 			Change=new class
+10)Class=Cobol					Change= protected String commentLine, with get and set methods
+11)Class=XMLPayload	Method=addElements()	Change= add comment line element
+12)Class=XMLPayload	Method=addCommentLineElement() Change= new mehod
+
