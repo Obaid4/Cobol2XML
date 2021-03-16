@@ -14,10 +14,22 @@ public class CommentLineAssembler extends Assembler{
 		//System.out.println("commentLineAssembler");
 		Cobol c = new Cobol();
 		Token t = (Token) a.pop();
-		if(t.sval() != null) {
-			c.setCommentLine(t.sval().trim());
-			a.setTarget(c);
+//		if(t.sval() != null) {
+//			c.setCommentLine(t.sval().trim());
+//			a.setTarget(c);
+//		}
+		String output = "";
+		while(!a.stackIsEmpty() && a.hasMoreElements()) {
+			if(t.sval() != null) {
+				output += t.sval();
+				t = (Token)a.pop();
+			}
+			else if(t.sval() == null) {
+				t = (Token)a.pop();
+			}
 		}
+		c.setCommentLine(output.trim());
+		a.setTarget(c);
 	}
 	
 }
